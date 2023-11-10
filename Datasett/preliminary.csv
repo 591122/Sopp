@@ -1,0 +1,16 @@
+variate,domainsize,V1,V2,V3,V4,V5,V6,V7,V8,V9,V10,V11,V12
+class,2,e,p,,,,,,,,,,
+capShape,5,b,f,k,s,x,,,,,,,
+capSurface,3,f,s,y,,,,,,,,,
+capColor,9,b,c,e,g,n,p,r,w,y,,,
+bruises,2,f,t,,,,,,,,,,
+odor,9,a,c,f,l,m,n,p,s,y,,,
+gillAttachment,2,a,f,,,,,,,,,,
+gillSpacing,2,c,w,,,,,,,,,,
+gillSize,2,b,n,,,,,,,,,,
+gillSize.1,2,b,n,,,,,,,,,,
+gillColor,12,b,e,g,h,k,n,o,p,r,u,w,y
+stalkShape,2,e,t,,,,,,,,,,
+stalkRoot,5,?,b,c,e,r,,,,,,,
+stalkSurfaceAboveRing,4,f,k,s,y,,,,,,,,
+stalkSurfaceBelowRing,4,f,k,s,y,,,,,,,,
