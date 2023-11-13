@@ -49,8 +49,8 @@ def linearregression(X_train, X_test, y_train, y_test):
     y_pred = rf.predict(X_test)
 
     # Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred.round())
-    cm = confusion_matrix(y_test, y_pred.round())
+    accuracy = accuracy_score(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
 
 def decisionregressor(X_train, X_test, y_train, y_test):
@@ -62,8 +62,8 @@ def decisionregressor(X_train, X_test, y_train, y_test):
     y_pred = rf.predict(X_test)
 
     # Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred.round())
-    cm = confusion_matrix(y_test, y_pred.round())
+    accuracy = accuracy_score(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
 
 def mlpregression(X_train, X_test, y_train, y_test):
@@ -75,8 +75,8 @@ def mlpregression(X_train, X_test, y_train, y_test):
     y_pred = rf.predict(X_test)
 
     # Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred.round())
-    cm = confusion_matrix(y_test, y_pred.round())
+    accuracy = accuracy_score(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
 
 def supportvectoregressor(X_train, X_test, y_train, y_test):
@@ -87,8 +87,8 @@ def supportvectoregressor(X_train, X_test, y_train, y_test):
     y_pred = regr.predict(X_test)
 
     # Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred.round())
-    cm = confusion_matrix(y_test, y_pred.round())
+    accuracy = accuracy_score(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
 
 def kneighborsregressor(X_train, X_test, y_train, y_test):
@@ -100,6 +100,6 @@ def kneighborsregressor(X_train, X_test, y_train, y_test):
     y_pred = rf.predict(X_test)
 
     # Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred.round())
-    cm = confusion_matrix(y_test, y_pred.round())
+    accuracy = accuracy_score(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
