@@ -4,12 +4,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 from sklearn.neural_network import MLPRegressor
-from sklearn.svm import SVR
+from sklearn.svm import SVR, SVC
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import KNeighborsRegressor
+from sklearn.neighbors import KNeighborsRegressor, KNeighborsClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 
@@ -55,7 +55,7 @@ def linearregression(X_train, X_test, y_train, y_test):
 
 def decisionregressor(X_train, X_test, y_train, y_test):
     # Import and train a machine learning model
-    rf = DecisionTreeRegressor()
+    rf = DecisionTreeClassifier()
     rf.fit(X_train, y_train)
 
     # Predict on the test data
@@ -64,7 +64,7 @@ def decisionregressor(X_train, X_test, y_train, y_test):
     # Evaluate the model
     accuracy = accuracy_score(y_test, y_pred)
     cm = confusion_matrix(y_test, y_pred)
-    return accuracy, cm
+    return accuracy,cm  # Return accuracy and confusion matrix as a tuple
 
 def mlpregression(X_train, X_test, y_train, y_test):
     # Import and train a machine learning model
@@ -79,27 +79,26 @@ def mlpregression(X_train, X_test, y_train, y_test):
     cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
 
-def supportvectoregressor(X_train, X_test, y_train, y_test):
-    regr = make_pipeline(StandardScaler(), SVR(C=1.0, epsilon=0.2))
-    regr.fit(X_train, y_train)
+def supportvectorclassifier(X_train, X_test, y_train, y_test):
+    clf = make_pipeline(StandardScaler(), SVC())
+    clf.fit(X_train, y_train)
     
     # Predict on the test data
-    y_pred = regr.predict(X_test)
+    y_pred = clf.predict(X_test)
 
-    # Evaluate the model
+    # Evaluate the model using appropriate classification metrics
     accuracy = accuracy_score(y_test, y_pred)
     cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
 
-def kneighborsregressor(X_train, X_test, y_train, y_test):
-    # Import and train a machine learning model
-    rf = KNeighborsRegressor()
-    rf.fit(X_train, y_train)
-
+def kneighborsclassifier(X_train, X_test, y_train, y_test):
+    clf = KNeighborsClassifier()
+    clf.fit(X_train, y_train)
+    
     # Predict on the test data
-    y_pred = rf.predict(X_test)
+    y_pred = clf.predict(X_test)
 
-    # Evaluate the model
+    # Evaluate the model using appropriate classification metrics
     accuracy = accuracy_score(y_test, y_pred)
     cm = confusion_matrix(y_test, y_pred)
     return accuracy, cm
